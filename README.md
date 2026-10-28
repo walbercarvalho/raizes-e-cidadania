@@ -8,7 +8,7 @@ Nasceu de um trabalho real de pesquisa familiar e de preparação de um pedido d
 
 O agente cria uma pasta para a família, com os documentos originais guardados como chegaram, cópias renomeadas por data, tipo e pessoa, e um índice em planilha.
 
-Os dados de todos os parentes ficam num único arquivo, o `pessoas.json`. Dele saem a árvore em HTML, que abre em qualquer navegador e funciona sem internet, uma ficha em Markdown por pessoa (dá para abrir no Obsidian) e um arquivo GEDCOM para levar a árvore ao FamilySearch, MyHeritage, Ancestry ou Gramps. Na árvore, cada fato traz o documento de onde veio e um selo: confirmado, relato da família ou hipótese.
+Os dados de todos os parentes ficam num único arquivo, o `pessoas.json`. Dele saem a árvore em HTML, que abre em qualquer navegador e funciona sem internet, uma ficha em Markdown por pessoa (dá para abrir no Obsidian) e um arquivo GEDCOM para levar a árvore ao FamilySearch, MyHeritage, Ancestry ou Gramps. Na árvore, cada fato traz o documento de onde veio e um selo: confirmado, relato da família ou hipótese. Ao lado de cada nome aparece o ícone do país, reino ou povo de nascimento na época (Reino de Portugal, Império do Brasil, Reino de Itália e assim por diante), e uma estrela marca quem foi figura conhecida na história, com um resumo e o link da fonte. A estrela só entra depois de você autorizar a pesquisa e quando os documentos da família mostram que se trata da mesma pessoa, e não de um homônimo.
 
 Documentos antigos, como batismos, registros civis, passaportes e listas de navio, são transcritos com as dúvidas marcadas. As skills leem português, italiano, espanhol e latim.
 

@@ -7,62 +7,179 @@
       "id": "clara",
       "nome": "Clara Bianchi Ferreira",
       "sexo": "F",
-      "pais": ["paulo", "lucia"],
-      "filiacao": {"status": "confirmado", "fontes": ["doc-clara-nasc"]},
+      "pais": [
+        "paulo",
+        "lucia"
+      ],
+      "filiacao": {
+        "status": "confirmado",
+        "fontes": [
+          "doc-clara-nasc"
+        ]
+      },
       "eventos": [
-        {"tipo": "nascimento", "data": "1992-04-10", "local": "Campinas, SP, Brasil", "status": "confirmado", "fontes": ["doc-clara-nasc"]}
+        {
+          "tipo": "nascimento",
+          "data": "1992-04-10",
+          "local": "Campinas, SP, Brasil",
+          "status": "confirmado",
+          "fontes": [
+            "doc-clara-nasc"
+          ]
+        }
       ]
     },
     {
       "id": "paulo",
       "nome": "Paulo Ferreira",
       "sexo": "M",
-      "pais": ["antonio", "rosa"],
-      "filiacao": {"status": "confirmado", "fontes": ["doc-paulo-nasc"]},
+      "pais": [
+        "antonio",
+        "rosa"
+      ],
+      "filiacao": {
+        "status": "confirmado",
+        "fontes": [
+          "doc-paulo-nasc"
+        ]
+      },
       "profissao": "engenheiro",
       "eventos": [
-        {"tipo": "nascimento", "data": "1960-08-02", "local": "Santos, SP, Brasil", "status": "confirmado", "fontes": ["doc-paulo-nasc"]}
+        {
+          "tipo": "nascimento",
+          "data": "1960-08-02",
+          "local": "Santos, SP, Brasil",
+          "status": "confirmado",
+          "fontes": [
+            "doc-paulo-nasc"
+          ]
+        }
       ]
     },
     {
       "id": "lucia",
       "nome": "Lúcia Bianchi",
       "sexo": "F",
-      "pais": ["giuseppe", "teresa"],
-      "filiacao": {"status": "relato", "nota": "Contado pela própria Lúcia em 2026; falta a certidão de nascimento."},
+      "pais": [
+        "giuseppe",
+        "teresa"
+      ],
+      "filiacao": {
+        "status": "relato",
+        "nota": "Contado pela própria Lúcia em 2026; falta a certidão de nascimento."
+      },
       "eventos": [
-        {"tipo": "nascimento", "data": "1963", "local": "São Paulo, SP, Brasil", "status": "relato", "nota": "Ano dito pela Lúcia em 2026."}
+        {
+          "tipo": "nascimento",
+          "data": "1963",
+          "local": "São Paulo, SP, Brasil",
+          "status": "relato",
+          "nota": "Ano dito pela Lúcia em 2026."
+        }
       ]
     },
     {
       "id": "antonio",
       "nome": "Antônio Ferreira",
       "sexo": "M",
-      "pais": ["manuel", "maria"],
-      "filiacao": {"status": "confirmado", "fontes": ["doc-antonio-nasc"]},
+      "pais": [
+        "manuel",
+        "maria"
+      ],
+      "filiacao": {
+        "status": "confirmado",
+        "fontes": [
+          "doc-antonio-nasc"
+        ]
+      },
       "eventos": [
-        {"tipo": "nascimento", "data": "1925-01-15", "local": "Santos, SP, Brasil", "status": "confirmado", "fontes": ["doc-antonio-nasc"]},
-        {"tipo": "obito", "data": "1998-06-30", "local": "Santos, SP, Brasil", "status": "hipotese", "nota": "Data lembrada pela família; certidão não localizada."}
-      ]
+        {
+          "tipo": "nascimento",
+          "data": "1925-01-15",
+          "local": "Santos, SP, Brasil",
+          "status": "confirmado",
+          "fontes": [
+            "doc-antonio-nasc"
+          ]
+        },
+        {
+          "tipo": "obito",
+          "data": "1998-06-30",
+          "local": "Santos, SP, Brasil",
+          "status": "hipotese",
+          "nota": "Data lembrada pela família; certidão não localizada."
+        }
+      ],
+      "destaque": {
+        "resumo": "A família conta que Antonio jogou no time principal do Santos Futebol Clube no fim dos anos 1940.",
+        "links": [
+          {
+            "titulo": "Santos Futebol Clube (Wikipédia)",
+            "url": "https://pt.wikipedia.org/wiki/Santos_Futebol_Clube"
+          }
+        ],
+        "status": "relato",
+        "nota": "Contado por Paulo em 27/10/2026. A fonte descreve o clube, mas não cita Antonio; falta achar o nome dele em súmula, jornal ou lista de elenco.",
+        "consultado": "2026-10-28"
+      }
     },
     {
       "id": "rosa",
       "nome": "Rosa Martins",
       "sexo": "F",
-      "eventos": []
+      "eventos": [],
+      "origem": {
+        "icone": "",
+        "nome": "Povo Guarani",
+        "nota": "Relato de Clara em 27/10/2026; sem documento."
+      }
     },
     {
       "id": "manuel",
       "nome": "Manuel Ferreira da Silva",
-      "variantes": ["Manoel Ferreira", "Manoel Ferr.a da Silva"],
+      "variantes": [
+        "Manoel Ferreira",
+        "Manoel Ferr.a da Silva"
+      ],
       "sexo": "M",
-      "pais": ["joaquim", "ana"],
-      "filiacao": {"status": "confirmado", "fontes": ["doc-manuel-bat"]},
+      "pais": [
+        "joaquim",
+        "ana"
+      ],
+      "filiacao": {
+        "status": "confirmado",
+        "fontes": [
+          "doc-manuel-bat"
+        ]
+      },
       "profissao": "carpinteiro",
       "eventos": [
-        {"tipo": "batismo", "data": "1895-03-12", "local": "Freguesia de Exemplo, Viana do Castelo, Portugal", "status": "confirmado", "fontes": ["doc-manuel-bat"], "nota": "Nascido em 05/03/1895 segundo o assento."},
-        {"tipo": "imigracao", "data": "c. 1913", "local": "Porto de Santos", "status": "hipotese", "nota": "Deduzido do casamento em 1920; lista de passageiros não localizada."},
-        {"tipo": "obito", "data": "1971-11-02", "local": "Santos, SP, Brasil", "status": "confirmado", "fontes": ["doc-manuel-obito"]}
+        {
+          "tipo": "batismo",
+          "data": "1895-03-12",
+          "local": "Freguesia de Exemplo, Viana do Castelo, Portugal",
+          "status": "confirmado",
+          "fontes": [
+            "doc-manuel-bat"
+          ],
+          "nota": "Nascido em 05/03/1895 segundo o assento."
+        },
+        {
+          "tipo": "imigracao",
+          "data": "c. 1913",
+          "local": "Porto de Santos",
+          "status": "hipotese",
+          "nota": "Deduzido do casamento em 1920; lista de passageiros não localizada."
+        },
+        {
+          "tipo": "obito",
+          "data": "1971-11-02",
+          "local": "Santos, SP, Brasil",
+          "status": "confirmado",
+          "fontes": [
+            "doc-manuel-obito"
+          ]
+        }
       ]
     },
     {
@@ -86,10 +203,18 @@
     {
       "id": "giuseppe",
       "nome": "Giuseppe Bianchi",
-      "variantes": ["José Bianchi"],
+      "variantes": [
+        "José Bianchi"
+      ],
       "sexo": "M",
       "eventos": [
-        {"tipo": "nascimento", "data": "entre 1900 e 1905", "local": "Veneto, Itália", "status": "relato", "nota": "A família diz Treviso; comune não confirmado."}
+        {
+          "tipo": "nascimento",
+          "data": "entre 1900 e 1905",
+          "local": "Veneto, Itália",
+          "status": "relato",
+          "nota": "A família diz Treviso; comune não confirmado."
+        }
       ]
     },
     {
@@ -100,25 +225,177 @@
     }
   ],
   "unioes": [
-    {"id": "u-manuel-maria", "pessoas": ["manuel", "maria"], "tipo": "casamento civil", "data": "1920-05-08", "local": "Santos, SP, Brasil", "status": "confirmado", "fontes": ["doc-manuel-cas"]},
-    {"id": "u-paulo-lucia", "pessoas": ["paulo", "lucia"], "tipo": "casamento civil"},
-    {"id": "u-antonio-rosa", "pessoas": ["antonio", "rosa"], "tipo": "casamento"},
-    {"id": "u-giuseppe-teresa", "pessoas": ["giuseppe", "teresa"], "tipo": "casamento"}
+    {
+      "id": "u-manuel-maria",
+      "pessoas": [
+        "manuel",
+        "maria"
+      ],
+      "tipo": "casamento civil",
+      "data": "1920-05-08",
+      "local": "Santos, SP, Brasil",
+      "status": "confirmado",
+      "fontes": [
+        "doc-manuel-cas"
+      ]
+    },
+    {
+      "id": "u-paulo-lucia",
+      "pessoas": [
+        "paulo",
+        "lucia"
+      ],
+      "tipo": "casamento civil"
+    },
+    {
+      "id": "u-antonio-rosa",
+      "pessoas": [
+        "antonio",
+        "rosa"
+      ],
+      "tipo": "casamento"
+    },
+    {
+      "id": "u-giuseppe-teresa",
+      "pessoas": [
+        "giuseppe",
+        "teresa"
+      ],
+      "tipo": "casamento"
+    }
   ],
   "documentos": [
-    {"id": "doc-clara-nasc", "tipo": "certidão de nascimento", "titulo": "Nascimento de Clara, 1992", "data": "1992-04-10", "local": "Campinas", "pessoas": ["clara", "paulo", "lucia"], "acervo": "Cartório de Registro Civil (exemplo)"},
-    {"id": "doc-paulo-nasc", "tipo": "certidão de nascimento", "titulo": "Nascimento de Paulo, 1960", "data": "1960-08-02", "local": "Santos", "pessoas": ["paulo", "antonio", "rosa"], "acervo": "Cartório de Registro Civil (exemplo)"},
-    {"id": "doc-antonio-nasc", "tipo": "certidão de nascimento", "titulo": "Nascimento de Antônio, 1925", "data": "1925-01-15", "local": "Santos", "pessoas": ["antonio", "manuel", "maria"], "acervo": "Cartório de Registro Civil (exemplo)", "observacoes": "Pai registrado como Manoel Ferreira, português."},
-    {"id": "doc-manuel-bat", "tipo": "assento de batismo", "titulo": "Batismo de Manuel, 1895", "data": "1895-03-12", "local": "Viana do Castelo", "pessoas": ["manuel", "joaquim", "ana"], "acervo": "Arquivo Distrital (exemplo)", "cota": "PT-EXEMPLO-PRQ-1895", "transcricao": "transcricoes/1895-03-12-batismo-manuel-ferreira-da-silva.md"},
-    {"id": "doc-manuel-cas", "tipo": "certidão de casamento", "titulo": "Casamento de Manuel e Maria, 1920", "data": "1920-05-08", "local": "Santos", "pessoas": ["manuel", "maria"], "acervo": "Cartório de Registro Civil (exemplo)"},
-    {"id": "doc-manuel-obito", "tipo": "certidão de óbito", "titulo": "Óbito de Manuel, 1971", "data": "1971-11-02", "local": "Santos", "pessoas": ["manuel"], "acervo": "Cartório de Registro Civil (exemplo)", "observacoes": "Declara idade de 78 anos, o que daria nascimento em 1893."}
+    {
+      "id": "doc-clara-nasc",
+      "tipo": "certidão de nascimento",
+      "titulo": "Nascimento de Clara, 1992",
+      "data": "1992-04-10",
+      "local": "Campinas",
+      "pessoas": [
+        "clara",
+        "paulo",
+        "lucia"
+      ],
+      "acervo": "Cartório de Registro Civil (exemplo)"
+    },
+    {
+      "id": "doc-paulo-nasc",
+      "tipo": "certidão de nascimento",
+      "titulo": "Nascimento de Paulo, 1960",
+      "data": "1960-08-02",
+      "local": "Santos",
+      "pessoas": [
+        "paulo",
+        "antonio",
+        "rosa"
+      ],
+      "acervo": "Cartório de Registro Civil (exemplo)"
+    },
+    {
+      "id": "doc-antonio-nasc",
+      "tipo": "certidão de nascimento",
+      "titulo": "Nascimento de Antônio, 1925",
+      "data": "1925-01-15",
+      "local": "Santos",
+      "pessoas": [
+        "antonio",
+        "manuel",
+        "maria"
+      ],
+      "acervo": "Cartório de Registro Civil (exemplo)",
+      "observacoes": "Pai registrado como Manoel Ferreira, português."
+    },
+    {
+      "id": "doc-manuel-bat",
+      "tipo": "assento de batismo",
+      "titulo": "Batismo de Manuel, 1895",
+      "data": "1895-03-12",
+      "local": "Viana do Castelo",
+      "pessoas": [
+        "manuel",
+        "joaquim",
+        "ana"
+      ],
+      "acervo": "Arquivo Distrital (exemplo)",
+      "cota": "PT-EXEMPLO-PRQ-1895",
+      "transcricao": "transcricoes/1895-03-12-batismo-manuel-ferreira-da-silva.md"
+    },
+    {
+      "id": "doc-manuel-cas",
+      "tipo": "certidão de casamento",
+      "titulo": "Casamento de Manuel e Maria, 1920",
+      "data": "1920-05-08",
+      "local": "Santos",
+      "pessoas": [
+        "manuel",
+        "maria"
+      ],
+      "acervo": "Cartório de Registro Civil (exemplo)"
+    },
+    {
+      "id": "doc-manuel-obito",
+      "tipo": "certidão de óbito",
+      "titulo": "Óbito de Manuel, 1971",
+      "data": "1971-11-02",
+      "local": "Santos",
+      "pessoas": [
+        "manuel"
+      ],
+      "acervo": "Cartório de Registro Civil (exemplo)",
+      "observacoes": "Declara idade de 78 anos, o que daria nascimento em 1893."
+    }
   ],
   "divergencias": [
-    {"pessoa": "manuel", "campo": "ano de nascimento", "valores": [{"valor": "1895", "fonte": "doc-manuel-bat"}, {"valor": "c. 1893 (78 anos)", "fonte": "doc-manuel-obito"}], "nota": "O batismo prevalece para a data; a idade no óbito foi declarada por terceiro."},
-    {"pessoa": "manuel", "campo": "grafia do nome", "valores": [{"valor": "Manuel Ferreira da Silva", "fonte": "doc-manuel-bat"}, {"valor": "Manoel Ferreira", "fonte": "doc-antonio-nasc"}], "nota": "Mesma pessoa: pais, profissão e lugar coincidem."}
+    {
+      "pessoa": "manuel",
+      "campo": "ano de nascimento",
+      "valores": [
+        {
+          "valor": "1895",
+          "fonte": "doc-manuel-bat"
+        },
+        {
+          "valor": "c. 1893 (78 anos)",
+          "fonte": "doc-manuel-obito"
+        }
+      ],
+      "nota": "O batismo prevalece para a data; a idade no óbito foi declarada por terceiro."
+    },
+    {
+      "pessoa": "manuel",
+      "campo": "grafia do nome",
+      "valores": [
+        {
+          "valor": "Manuel Ferreira da Silva",
+          "fonte": "doc-manuel-bat"
+        },
+        {
+          "valor": "Manoel Ferreira",
+          "fonte": "doc-antonio-nasc"
+        }
+      ],
+      "nota": "Mesma pessoa: pais, profissão e lugar coincidem."
+    }
   ],
   "cadeias": [
-    {"nome": "Portugal pelo bisavô Manuel", "nacionalidade": "PT", "elos": ["manuel", "antonio", "paulo", "clara"]},
-    {"nome": "Itália pelo avô Giuseppe", "nacionalidade": "IT", "elos": ["giuseppe", "lucia", "clara"]}
+    {
+      "nome": "Portugal pelo bisavô Manuel",
+      "nacionalidade": "PT",
+      "elos": [
+        "manuel",
+        "antonio",
+        "paulo",
+        "clara"
+      ]
+    },
+    {
+      "nome": "Itália pelo avô Giuseppe",
+      "nacionalidade": "IT",
+      "elos": [
+        "giuseppe",
+        "lucia",
+        "clara"
+      ]
+    }
   ]
 }

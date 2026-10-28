@@ -84,6 +84,140 @@ def gravar(caminho, texto):
 
 # ---------------------------------------------------------------- validação
 
+# ---------------------------------------------------------------- origem (país, reino ou povo)
+
+# Ícones simplificados (SVG 30x20) do Estado de cada época. Não são reproduções
+# oficiais exatas; servem para reconhecer a origem de relance.
+BANDEIRAS = {
+    "br": '<rect width="30" height="20" fill="#009c3b"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10z" fill="#ffdf00"/><circle cx="15" cy="10" r="4.3" fill="#002776"/><path d="M10.9 9.2q4.3-1 8.3 1.5" stroke="#fff" stroke-width=".7" fill="none"/>',
+    "br-imperio": '<rect width="30" height="20" fill="#00953e"/><path d="M15 2.6 27.4 10 15 17.4 2.6 10z" fill="#fcd116"/><path d="M12.4 7.6h5.2v3.4q0 2.6-2.6 3.2-2.6-.6-2.6-3.2z" fill="#00953e" stroke="#fff" stroke-width=".5"/><path d="M12.8 6.9l.6-1.6 1.6.9 1.6-.9.6 1.6z" fill="#fcd116" stroke="#8a6d00" stroke-width=".2"/>',
+    "pt": '<rect width="30" height="20" fill="#da291c"/><rect width="12" height="20" fill="#046a38"/><circle cx="12" cy="10" r="4.4" fill="none" stroke="#ffe900" stroke-width="1.2"/><path d="M10 7.7h4v3.2q0 1.9-2 2.4-2-.5-2-2.4z" fill="#fff" stroke="#da291c" stroke-width=".6"/>',
+    "pt-reino": '<rect width="15" height="20" fill="#0038a8"/><rect x="15" width="15" height="20" fill="#fff"/><path d="M12 7.5h6v4q0 3-3 3.6-3-.6-3-3.6z" fill="#fff" stroke="#c8102e" stroke-width="1"/><circle cx="15" cy="10.5" r="1" fill="#0038a8"/><path d="M12.3 6.8l.7-2 2 1 2-1 .7 2z" fill="#f2c200"/>',
+    "it": '<rect width="10" height="20" fill="#009246"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ce2b37"/>',
+    "it-reino": '<rect width="10" height="20" fill="#009246"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ce2b37"/><path d="M12.6 6.5h4.8v4.3q0 2.4-2.4 3-2.4-.6-2.4-3z" fill="#ce2b37" stroke="#1f5fbf" stroke-width=".5"/><path d="M15 7.3v6M13.3 9.6h3.4" stroke="#fff" stroke-width="1"/>',
+    "es": '<rect width="30" height="20" fill="#aa151b"/><rect y="5" width="30" height="10" fill="#f1bf00"/>',
+    "es-rep": '<rect width="30" height="6.67" fill="#da121a"/><rect y="6.67" width="30" height="6.67" fill="#fcdd09"/><rect y="13.33" width="30" height="6.67" fill="#6d2c84"/>',
+    "jp": '<rect width="30" height="20" fill="#fff"/><circle cx="15" cy="10" r="6" fill="#bc002d"/>',
+    "ar": '<rect width="30" height="20" fill="#74acdf"/><rect y="6.67" width="30" height="6.67" fill="#fff"/><circle cx="15" cy="10" r="2" fill="#f6b40e"/>',
+    "fr": '<rect width="10" height="20" fill="#002395"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ed2939"/>',
+    "de": '<rect width="30" height="6.67"/><rect y="6.67" width="30" height="6.67" fill="#dd0000"/><rect y="13.33" width="30" height="6.67" fill="#ffce00"/>',
+    "de-imperio": '<rect width="30" height="6.67"/><rect y="6.67" width="30" height="6.67" fill="#fff"/><rect y="13.33" width="30" height="6.67" fill="#dd0000"/>',
+    "at": '<rect width="30" height="20" fill="#ed2939"/><rect y="6.67" width="30" height="6.67" fill="#fff"/>',
+    "at-hu": '<rect width="30" height="10"/><rect y="10" width="30" height="10" fill="#fcd116"/>',
+    "pl": '<rect width="30" height="10" fill="#fff"/><rect y="10" width="30" height="10" fill="#dc143c"/>',
+    "lb": '<rect width="30" height="20" fill="#ed1c24"/><rect y="5" width="30" height="10" fill="#fff"/><path d="M15 6.2l3.2 6.6h-6.4z" fill="#00a651"/>',
+    "otomano": '<rect width="30" height="20" fill="#e30a17"/><circle cx="13" cy="10" r="5" fill="#fff"/><circle cx="14.3" cy="10" r="4" fill="#e30a17"/><path d="M19.6 10l-3 1 1.8-2.5v3l-1.8-2.5z" fill="#fff"/>',
+    "us": '<rect width="30" height="20" fill="#fff"/><path d="M0 0h30v1.54H0zm0 3.08h30v1.54H0zm0 3.08h30v1.54H0zm0 3.08h30v1.54H0zm0 3.08h30v1.54H0zm0 3.08h30v1.54H0zm0 3.08h30v1.54H0z" fill="#b22234"/><rect width="12" height="10.77" fill="#3c3b6e"/>',
+}
+
+PAISES = {
+    "BR": ("Brasil", ("brasil", "brazil")), "PT": ("Portugal", ("portugal",)),
+    "IT": ("Itália", ("itália", "italia", "italy")), "ES": ("Espanha", ("espanha", "españa", "spain")),
+    "JP": ("Japão", ("japão", "japao", "japan")), "AR": ("Argentina", ("argentina",)),
+    "FR": ("França", ("frança", "franca", "france")), "DE": ("Alemanha", ("alemanha", "germany", "deutschland")),
+    "AT": ("Áustria", ("áustria", "austria")), "PL": ("Polônia", ("polônia", "polonia", "poland")),
+    "LB": ("Líbano", ("líbano", "libano", "lebanon")), "SY": ("Síria", ("síria", "siria", "syria")),
+    "US": ("Estados Unidos", ("estados unidos", "eua", "usa")),
+}
+UFS = set("AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO".split())
+
+# Estado de cada época: (início, fim, ícone, nome). Início incluído, fim excluído; None = sem limite.
+PERIODOS = {
+    "BR": [(None, "1815-12-16", "pt-reino", "Estado do Brasil, colônia do Reino de Portugal"),
+           ("1815-12-16", "1822-09-07", "pt-reino", "Reino Unido de Portugal, Brasil e Algarves"),
+           ("1822-09-07", "1889-11-15", "br-imperio", "Império do Brasil"),
+           ("1889-11-15", None, "br", "República do Brasil")],
+    "PT": [(None, "1910-10-05", "pt-reino", "Reino de Portugal"), ("1910-10-05", None, "pt", "República Portuguesa")],
+    "IT": [(None, "1861-03-17", "", "Estados italianos antes da unificação"),
+           ("1861-03-17", "1946-06-02", "it-reino", "Reino de Itália"), ("1946-06-02", None, "it", "República Italiana")],
+    "ES": [(None, "1873-02-11", "es", "Reino de Espanha"), ("1873-02-11", "1874-12-29", "es", "Primeira República Espanhola"),
+           ("1874-12-29", "1931-04-14", "es", "Reino de Espanha"), ("1931-04-14", "1939-04-01", "es-rep", "Segunda República Espanhola"),
+           ("1939-04-01", "1975-11-22", "es", "Espanha (regime de Franco)"), ("1975-11-22", None, "es", "Reino de Espanha")],
+    "JP": [(None, "1868-01-03", "jp", "Japão (xogunato Tokugawa)"), ("1868-01-03", "1947-05-03", "jp", "Império do Japão"),
+           ("1947-05-03", None, "jp", "Japão")],
+    "DE": [(None, "1871-01-18", "", "Estados alemães antes da unificação"), ("1871-01-18", "1918-11-09", "de-imperio", "Império Alemão"),
+           ("1918-11-09", None, "de", "Alemanha")],
+    "AT": [(None, "1867-03-30", "at", "Império Austríaco"), ("1867-03-30", "1918-11-12", "at-hu", "Áustria-Hungria"),
+           ("1918-11-12", None, "at", "Áustria")],
+    "PL": [(None, "1918-11-11", "", "Polônia dividida entre Rússia, Prússia e Áustria"), ("1918-11-11", None, "pl", "Polônia")],
+    "LB": [(None, "1918-10-01", "otomano", "Império Otomano"), ("1918-10-01", "1943-11-22", "lb", "Líbano sob mandato francês"),
+           ("1943-11-22", None, "lb", "Líbano")],
+    "SY": [(None, "1918-10-01", "otomano", "Império Otomano"), ("1918-10-01", None, "", "Síria")],
+    "AR": [(None, None, "ar", "Argentina")], "FR": [(None, None, "fr", "França")], "US": [(None, None, "us", "Estados Unidos")],
+}
+
+
+def intervalo(data):
+    """Primeiro e último dia possíveis de uma data do pessoas.json; None quando não há data legível."""
+    v = str(data or "").strip()
+
+    def lim(s, fim):
+        m = re.match(r"^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$", s.strip())
+        if not m:
+            return None
+        a, me, d = m.groups()
+        if d:
+            return "%s-%s-%s" % (a, me, d)
+        if me:
+            return "%s-%s-%s" % (a, me, "31" if fim else "01")
+        return "%s-%s" % (a, "12-31" if fim else "01-01")
+
+    if not v:
+        return None
+    if v.startswith("c. "):
+        m = re.match(r"\d{4}", v[3:])
+        return ("%d-01-01" % (int(m.group()) - 2), "%d-12-31" % (int(m.group()) + 2)) if m else None
+    if v.startswith("antes de "):
+        f = lim(v[9:], False)
+        return (None, f) if f else None
+    if v.startswith("depois de "):
+        i = lim(v[10:], True)
+        return (i, None) if i else None
+    m = re.match(r"^entre (\S+) e (\S+)$", v)
+    if m:
+        i, f = lim(m.group(1), False), lim(m.group(2), True)
+        return (i, f) if i and f else None
+    i = lim(v, False)
+    return (i, lim(v, True)) if i else None
+
+
+def pais_do_local(local):
+    partes = [re.sub(r"\[\?\]", "", x).strip() for x in str(local or "").split(",")]
+    for parte in reversed(partes):
+        if parte.upper() in UFS and len(parte) == 2:
+            return "BR"
+        baixo = parte.lower()
+        for cod, (_, chaves) in PAISES.items():
+            if any(c in baixo for c in chaves):
+                return cod
+    return None
+
+
+def origem_pessoa(p):
+    """Origem da pessoa: a declarada em 'origem' ou a deduzida do local e da data de nascimento."""
+    if p.get("origem"):
+        o = p["origem"]
+        return {"icone": o.get("icone", ""), "nome": o.get("nome", ""), "nota": o.get("nota", ""), "derivado": False}
+    ev = evento(p, "nascimento") or evento(p, "batismo")
+    cod = pais_do_local((ev or {}).get("local"))
+    if not cod:
+        return None
+    lista = PERIODOS.get(cod, [(None, None, "", PAISES[cod][0])])
+    inter = intervalo((ev or {}).get("data"))
+    if inter:
+        ini, fim = inter
+        lista = [x for x in lista if (x[1] is None or ini is None or ini < x[1]) and (x[0] is None or fim is None or fim >= x[0])]
+    icones = {x[2] for x in lista}
+    nome = " ou ".join(dict.fromkeys(x[3] for x in lista)) or PAISES[cod][0]
+    if len(lista) > 1:
+        nome = nome + " (época incerta)" if inter else PAISES[cod][0] + " (época não informada)"
+    return {"icone": icones.pop() if len(icones) == 1 else "", "nome": nome, "sigla": cod, "derivado": True}
+
+
+def destaque_links(p):
+    return [l for l in (p.get("destaque") or {}).get("links", []) if l.get("url")]
+
+
 RE_DATA = re.compile(r"^(c\. |antes de |depois de )?\d{4}(-\d{2}(-\d{2})?)?$|^entre \d{4}(-\d{2}(-\d{2})?)? e \d{4}(-\d{2}(-\d{2})?)?$")
 
 
@@ -135,6 +269,26 @@ def validar(dados, base):
             if ev.get("tipo") not in TIPOS_EVENTO:
                 avisos.append("%s: evento '%s' desconhecido" % (pid, ev.get("tipo")))
             conferir_fato(pid, ev, ev.get("tipo", "evento"))
+        o = p.get("origem")
+        if o is not None:
+            if not isinstance(o, dict) or not o.get("nome"):
+                erros.append("%s: origem precisa de 'nome' (e, se houver, 'icone')" % pid)
+            elif o.get("icone") and o["icone"] not in BANDEIRAS:
+                avisos.append("%s: ícone de origem '%s' desconhecido; a árvore mostra a sigla" % (pid, o["icone"]))
+        dq = p.get("destaque")
+        if dq is not None:
+            if not dq.get("resumo"):
+                erros.append("%s: destaque sem resumo" % pid)
+            if not destaque_links(p):
+                erros.append("%s: destaque sem link para a fonte" % pid)
+            for l in dq.get("links", []):
+                if not str(l.get("url", "")).startswith(("http://", "https://")):
+                    erros.append("%s: link do destaque sem endereço http(s): %s" % (pid, l.get("titulo", "")))
+            conferir_fato(pid, dq, "destaque")
+            if dq.get("status") == "confirmado" and not dq.get("nota"):
+                avisos.append("%s, destaque: diga na nota o que prova que a figura conhecida é esta pessoa" % pid)
+            if not dq.get("consultado"):
+                avisos.append("%s, destaque: falta a data de consulta das fontes ('consultado')" % pid)
 
     for u in dados["unioes"]:
         for x in u.get("pessoas", []):
@@ -213,6 +367,9 @@ main{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;p
 .p{border:1px solid var(--bd);border-left:4px solid var(--mut);border-radius:8px;padding:6px 8px;cursor:pointer;background:var(--card);max-width:220px}
 .p.M{border-left-color:#4a7ab0}.p.F{border-left-color:#b0567a}.p:hover{background:var(--sel)}.p.vazio{opacity:.45;cursor:default;border-style:dashed}
 .p b{display:block;font-size:13px}.p small{color:var(--mut)}.p .cad{font-size:11px;color:var(--ac)}
+.org{display:inline-flex;vertical-align:-2px;margin-left:5px}.org svg{width:18px;height:12px;border-radius:2px;box-shadow:0 0 0 .6px rgba(0,0,0,.4)}
+.org.sig{font-size:9px;font-weight:700;line-height:12px;padding:0 3px;border:1px solid var(--bd);border-radius:3px;color:var(--mut);vertical-align:0}
+.estrela{color:#c9970c;margin-right:3px}.estrela.talvez{color:var(--mut)}.dq{border:1px solid #c9970c55;background:#c9970c12;border-radius:10px;padding:8px 10px;margin:10px 0}
 .painel{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 16px}
 .painel h2{margin:0 0 4px;font-size:19px}.mut{color:var(--mut)}
 table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}td,th{border-bottom:1px solid var(--bd);padding:6px 4px;text-align:left;vertical-align:top}
@@ -227,22 +384,28 @@ ul{padding-left:18px;margin:6px 0}#res{display:flex;flex-wrap:wrap;gap:6px;paddi
 <header><h1>__TITULO__</h1><input id="busca" placeholder="Buscar pessoa…" aria-label="Buscar pessoa"></header>
 <div id="res"></div>
 <main><section class="arv"><div class="gens" id="gens"></div></section><section class="painel" id="painel"></section></main>
-<p class="leg">Status de cada dado: <span class="st confirmado">confirmado</span> por documento, <span class="st relato">relato</span> da família, <span class="st hipotese">hipótese</span>. Gerado em __GERADO__ a partir de pessoas.json.</p>
+<p class="leg"><span class="estrela">★</span>figura conhecida na história, com fonte; <span class="estrela talvez">☆</span>possível, ainda não confirmada. O ícone ao lado do nome mostra o país, reino ou povo de nascimento (passe o mouse para ver o nome). Status de cada dado: <span class="st confirmado">confirmado</span> por documento, <span class="st relato">relato</span> da família, <span class="st hipotese">hipótese</span>. Gerado em __GERADO__ a partir de pessoas.json.</p>
 <script>
 const D = __DADOS__;
 const P = Object.fromEntries(D.pessoas.map(p => [p.id, p]));
 const DOC = Object.fromEntries(D.documentos.map(d => [d.id, d]));
+const BANDEIRAS = __BANDEIRAS__;
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const ROT = {nascimento:"Nascimento",batismo:"Batismo",casamento:"Casamento",obito:"Óbito",sepultamento:"Sepultamento",imigracao:"Imigração",emigracao:"Emigração",naturalizacao:"Naturalização",residencia:"Residência",outro:"Outro"};
 const ev = (p,t) => (p.eventos||[]).find(e => e.tipo === t);
 const ano = e => {const a=((e && String(e.data||"").match(/\d{4}/)) || [""])[0]; return a && !/^\d{4}/.test(String(e.data)) ? "c. "+a : a;};
 function vida(p){const n=ano(ev(p,"nascimento")||ev(p,"batismo")),o=ano(ev(p,"obito"));return (n||o)?`${n||"?"}–${o||(ev(p,"obito")?"?":"")}`:"";}
 function cadeias(id){return D.cadeias.filter(c => (c.elos||[]).includes(id)).map(c => c.nome);}
+const sigla = s => String(s||"?").split(/\s+/).filter(w=>!/^(d[aoe]s?|of|e)$/i.test(w)).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+function icone(o){if(!o)return "";const t=esc(o.nome+(o.derivado?" · deduzido do local e da data de nascimento":""));const s=BANDEIRAS[o.icone];
+  return s?`<span class="org" title="${t}"><svg viewBox="0 0 30 20" role="img" aria-label="${t}">${s}</svg></span>`:`<span class="org sig" title="${t}">${esc(o.sigla||sigla(o.nome))}</span>`;}
+function estrela(p){const d=p.destaque;if(!d)return "";const ok=d.status==="confirmado";
+  return `<span class="estrela${ok?"":" talvez"}" title="${ok?"Figura conhecida na história":"Possível figura conhecida (ainda não confirmada)"}">${ok?"★":"☆"}</span>`;}
 function caixa(id){
   const p = P[id];
   if(!p) return `<div class="p vazio"><b>desconhecido</b></div>`;
   const cad = cadeias(id);
-  return `<div class="p ${esc(p.sexo||"")}" data-id="${esc(id)}"><b>${esc(p.nome)}</b><small>${esc(vida(p))}</small>${cad.length?`<div class="cad">${esc(cad.join(" · "))}</div>`:""}</div>`;
+  return `<div class="p ${esc(p.sexo||"")}" data-id="${esc(id)}"><b>${estrela(p)}${esc(p.nome)}${icone(p._origem)}</b><small>${esc(vida(p))}</small>${cad.length?`<div class="cad">${esc(cad.join(" · "))}</div>`:""}</div>`;
 }
 function pais(id){const p=P[id];if(!p)return [null,null];const ps=(p.pais||[]).map(x=>P[x]).filter(Boolean);
   const pai=ps.find(x=>x.sexo==="M"),mae=ps.find(x=>x.sexo==="F");const resto=ps.filter(x=>x!==pai&&x!==mae);
@@ -258,14 +421,17 @@ function arvore(id){
   document.getElementById("gens").innerHTML = html;
 }
 function fontes(lst){return (lst||[]).map(d=>{const x=DOC[d];if(!x)return esc(d);
-  const alvo=x.arquivo||x.transcricao;const t=esc(x.titulo||d);return alvo?`<a href="${esc(alvo)}" target="_blank" rel="noopener">${t}</a>`:t;}).join("<br>")||'<span class="mut">sem documento</span>';}
+  const alvo=x.arquivo||x.transcricao||x.url;const t=esc(x.titulo||d);return alvo?`<a href="${esc(alvo)}" target="_blank" rel="noopener">${t}</a>`:t;}).join("<br>")||'<span class="mut">sem documento</span>';}
 function st(s){return s?`<span class="st ${esc(s)}">${esc(s==="hipotese"?"hipótese":s)}</span>`:"";}
 function painel(id){
   const p=P[id];if(!p)return;
   const filhos=D.pessoas.filter(x=>(x.pais||[]).includes(id));
   const unioes=D.unioes.filter(u=>(u.pessoas||[]).includes(id));
   const div=D.divergencias.filter(x=>x.pessoa===id);
-  let h=`<h2>${esc(p.nome)}</h2><div class="mut">${esc(vida(p))}${p.profissao?" · "+esc(p.profissao):""}</div>`;
+  let h=`<h2>${estrela(p)}${esc(p.nome)}${icone(p._origem)}</h2><div class="mut">${esc(vida(p))}${p.profissao?" · "+esc(p.profissao):""}</div>`;
+  if(p._origem) h+=`<p class="mut">Origem: ${esc(p._origem.nome)}${p._origem.derivado?" (deduzida do local e da data de nascimento)":""}${p._origem.nota?". "+esc(p._origem.nota):""}</p>`;
+  const dq=p.destaque;
+  if(dq) h+=`<div class="dq"><b>${estrela(p)}${dq.status==="confirmado"?"Figura conhecida na história":"Possível figura conhecida"}</b> ${st(dq.status)}<p>${esc(dq.resumo)}</p>${dq.nota?`<p class="mut"><small>${esc(dq.nota)}</small></p>`:""}<p><small>Fontes: ${(dq.links||[]).filter(l=>l.url).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.titulo||l.url)}</a>`).join(" · ")}${dq.consultado?` <span class="mut">(consultadas em ${esc(dq.consultado)})</span>`:""}</small></p></div>`;
   if((p.variantes||[]).length) h+=`<p class="mut">Também aparece como: ${p.variantes.map(esc).join("; ")}</p>`;
   h+=`<table><tr><th>Fato</th><th>Data e lugar</th><th>Fonte</th></tr>`;
   for(const e of (p.eventos||[])) h+=`<tr><td>${esc(ROT[e.tipo]||e.tipo)} ${st(e.status)}</td><td>${esc(e.data||"")}<br><span class="mut">${esc(e.local||"")}</span>${e.nota?`<br><small class="mut">${esc(e.nota)}</small>`:""}</td><td>${fontes(e.fontes)}</td></tr>`;
@@ -294,8 +460,10 @@ foco(P[ini]?ini:(D.pessoa_central&&P[D.pessoa_central]?D.pessoa_central:(D.pesso
 
 def gerar_html(dados, saida):
     titulo = html.escape(dados.get("familia") or "Árvore da família")
-    corpo = json.dumps(dados, ensure_ascii=False).replace("</", "<\\/")
+    copia = dict(dados, pessoas=[dict(p, _origem=origem_pessoa(p)) for p in dados["pessoas"]])
+    corpo = json.dumps(copia, ensure_ascii=False).replace("</", "<\\/")
     texto = (HTML_MODELO.replace("__TITULO__", titulo)
+             .replace("__BANDEIRAS__", json.dumps(BANDEIRAS))
              .replace("__GERADO__", datetime.date.today().strftime("%d/%m/%Y"))
              .replace("__DADOS__", corpo))
     gravar(saida, texto)
@@ -415,6 +583,10 @@ def gerar_gedcom(dados, saida):
                 L.append("1 FAMC %s" % x)
         if p.get("notas"):
             L.append("1 NOTE %s" % p["notas"].replace("\n", " "))
+        if p.get("destaque"):
+            dq = p["destaque"]
+            L.append("1 NOTE Figura conhecida (%s): %s Fontes: %s" % (dq.get("status", "sem status"), dq.get("resumo", ""),
+                     "; ".join("%s <%s>" % (l.get("titulo", ""), l["url"]) for l in destaque_links(p))))
         L.append("1 REFN %s" % p["id"])
 
     for chave, f in familias.items():
@@ -469,6 +641,19 @@ def bloco_ficha(dados, p):
         L.append("Filhos: " + "; ".join("[[%s]]" % x for x in filhos))
     if p.get("variantes"):
         L.append("Também aparece como: " + "; ".join(p["variantes"]))
+    o = origem_pessoa(p)
+    if o:
+        L.append("Origem: %s%s%s" % (o["nome"], " (deduzida do local e da data de nascimento)" if o["derivado"] else "",
+                                     ". " + o["nota"] if o.get("nota") else ""))
+    if p.get("destaque"):
+        dq = p["destaque"]
+        L.append("")
+        L.append("⭐ %s (%s): %s" % ("Figura conhecida na história" if dq.get("status") == "confirmado" else "Possível figura conhecida",
+                                     dq.get("status", "sem status"), dq.get("resumo", "")))
+        if dq.get("nota"):
+            L.append("Identificação: %s" % dq["nota"])
+        L.append("Fontes: %s%s" % (" · ".join("[%s](%s)" % (l.get("titulo") or l["url"], l["url"]) for l in destaque_links(p)),
+                                   " (consultadas em %s)" % dq["consultado"] if dq.get("consultado") else ""))
     for dv in dados["divergencias"]:
         if dv.get("pessoa") == p["id"]:
             L.append("Divergência em %s: %s" % (dv.get("campo"), " x ".join(
@@ -565,6 +750,11 @@ def gerar_pendencias(dados, saida):
             n += 1
     if not n:
         L.append("Nenhum.")
+    a_conferir = [p for p in dados["pessoas"] if p.get("destaque") and p["destaque"].get("status") != "confirmado"]
+    if a_conferir:
+        L += ["", "## Figuras conhecidas a confirmar", ""]
+        for p in a_conferir:
+            L.append("- %s: %s (%s)" % (p.get("nome"), p["destaque"].get("resumo", ""), p["destaque"].get("status", "sem status")))
     L += ["", "## Divergências registradas", ""]
     for dv in dados["divergencias"]:
         L.append("- %s, %s: %s" % (pessoas.get(dv.get("pessoa"), {}).get("nome", dv.get("pessoa")), dv.get("campo"),

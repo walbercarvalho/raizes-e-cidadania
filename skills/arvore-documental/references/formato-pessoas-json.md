@@ -45,6 +45,35 @@ Um único arquivo JSON, em UTF-8, guarda todos os dados da árvore. O `arvore.py
 - `pais`: ids do pai e da mãe (até dois). `filiacao` diz qual documento prova esse vínculo. Para cidadania, a filiação é tão importante quanto o nascimento: é ela que liga um elo ao outro.
 - `eventos[].tipo`: `nascimento`, `batismo`, `casamento`, `obito`, `sepultamento`, `imigracao`, `emigracao`, `naturalizacao`, `residencia`, `outro`. Casamentos entre duas pessoas cadastradas vão em `unioes`; o tipo `casamento` em eventos é só para quando o cônjuge não está cadastrado.
 
+### Origem (opcional)
+
+Sem o campo, o script deduz a origem do local e da data de nascimento (ou batismo) e mostra o ícone do Estado da época. Use o campo só quando a dedução não serve:
+
+```json
+"origem": {"icone": "", "nome": "Reino das Duas Sicílias", "nota": "Nascido em Padula antes da unificação (batismo de 1850)."}
+```
+
+- `nome`: país, reino, império ou povo, como deve aparecer.
+- `icone`: um destes, ou vazio para mostrar a sigla do nome: `br`, `br-imperio`, `pt`, `pt-reino`, `it`, `it-reino`, `es`, `es-rep`, `jp`, `ar`, `fr`, `de`, `de-imperio`, `at`, `at-hu`, `pl`, `lb`, `otomano`, `us`. Os ícones são simplificados e não reproduzem a bandeira oficial exata de cada período.
+- `nota`: de onde vem a informação. Origem que vem de relato diz quem contou.
+
+### Destaque: figura conhecida (opcional)
+
+```json
+"destaque": {
+  "resumo": "Pintor decorador; assinou o forro da igreja matriz de X em 1912.",
+  "links": [{"titulo": "Dicionário de pintores do Brasil, verbete", "url": "https://..."}],
+  "status": "confirmado",
+  "fontes": ["doc-joaquim-obito"],
+  "nota": "O verbete dá os mesmos pais, a mesma freguesia e o ano de nascimento do batismo.",
+  "consultado": "2026-10-28"
+}
+```
+
+- Na árvore, `confirmado` mostra ★; `relato` e `hipotese` mostram ☆.
+- `confirmado` exige documento da família em `fontes` e uma `nota` com o que prova que a figura conhecida é a mesma pessoa. Uma página da web pode ser cadastrada como documento com o campo `url`.
+- `links` precisam de endereço `http` ou `https`. `consultado` é a data em que as fontes foram abertas.
+
 ## Datas
 
 | Situação | Formato |
@@ -86,6 +115,7 @@ Datas fora desse padrão geram aviso e vão para o GEDCOM como nota. Calcule nas
 ```
 
 - `arquivo`, `original` e `transcricao` são caminhos relativos à pasta do `pessoas.json`. O validador avisa quando o arquivo não existe.
+- `url` (opcional): endereço de uma fonte online, como um verbete ou o registro num acervo digital. A árvore usa o link quando não há arquivo local.
 - Em `observacoes`, diga se é imagem de arquivo online, certidão oficial (e de quando), cópia simples ou foto de documento da família. Para cidadania isso muda tudo: imagem online prova o fato, mas o órgão quase sempre exige certidão oficial.
 
 ## Divergência

@@ -68,6 +68,18 @@ O formato completo do `pessoas.json` está em `references/formato-pessoas-json.m
 
 Toda busca feita, com ou sem resultado, vai para `pesquisas/AAAA-MM-DD-assunto.md`: onde buscou, quais termos e variantes, que intervalo de datas, quantos registros conferiu e o que encontrou. Uma busca sem resultado bem documentada evita repetir o mesmo trabalho e mostra o que ainda não foi tentado.
 
+### Figuras conhecidas e origem
+
+Cada pessoa aparece na árvore com um ícone do país, reino ou povo onde nasceu. O script deduz sozinho a partir do local e da data de nascimento (ou batismo): Portugal antes de 05/10/1910 vira Reino de Portugal, Brasil entre 1822 e 15/11/1889 vira Império do Brasil, Itália entre 1861 e 1946 vira Reino de Itália, e assim por diante. Para isso, termine o `local` com o país ("Mansores, Arouca, Aveiro, Portugal") ou, no Brasil, com a sigla do estado ("Botucatu, SP"). Quando a data não decide a época, o ícone vira a sigla do país e o nome diz "época incerta". Declare `origem` à mão quando a dedução não serve: povos indígenas e africanos, estados anteriores à unificação italiana ou alemã, impérios e regiões que mudaram de dono (formato em `references/formato-pessoas-json.md`).
+
+A estrela marca quem é figura conhecida na história: aparece em enciclopédia, dicionário biográfico, acervo de museu, livro de história ou imprensa da época como personagem, e não só como nome numa lista. Regras:
+
+- **Pergunte antes de pesquisar.** Buscar nomes na web manda esses nomes a um serviço externo. Peça autorização à pessoa e pesquise só antepassados já falecidos, com nome, lugar e época. Nunca pesquise pessoas vivas.
+- **Homônimo não é parente.** Só marque `confirmado` quando um documento da família e a fonte sobre a figura conhecida concordam em pontos que identificam a pessoa (pais, cônjuge, lugar e datas). Diga na `nota` quais pontos batem.
+- **Lenda de família é relato.** "Somos parentes do Marquês de Pombal" entra como `relato`, com quem contou, e aparece com estrela vazada (☆) até ser provado. Parentesco com alguém famoso que não está na árvore vai nas `notas` da pessoa, não em `destaque`.
+- **Fonte com link e data.** Todo destaque tem resumo curto, pelo menos um link e a data da consulta. Prefira fontes institucionais (arquivos, museus, bibliotecas nacionais, dicionários biográficos); Wikipédia serve como ponto de partida, mas confira o que ela cita.
+- **Sem achado, sem estrela.** Se a pesquisa não achar nada, registre a busca no log de pesquisas e não marque ninguém.
+
 ## Conversa com a pessoa
 
 Quem usa esta skill geralmente não é técnico. Explique em linguagem simples, mostre o resultado (abra a árvore no navegador quando possível) e, quando precisar de uma decisão, ofereça opções de múltipla escolha. Comemore achados, mas separe sempre o que está provado do que é provável.
