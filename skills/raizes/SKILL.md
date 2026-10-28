@@ -22,15 +22,12 @@ Se a ferramenta em uso não carregar as outras skills sozinha, leia o `SKILL.md`
 
 ## Primeira conversa
 
-Faça perguntas de múltipla escolha, poucas por vez (no máximo quatro), sempre com a opção de a pessoa responder com as próprias palavras. Quem está começando não sabe o que não sabe; opções concretas ajudam. Roteiro em `references/entrevista-inicial.md`. O essencial:
+Comece pela entrevista em `references/entrevista-inicial.md`, sempre na ordem dela. Escolhas vão em múltipla escolha, no máximo quatro perguntas por vez; dados das pessoas vão em blocos para preencher, uma geração por mensagem. Sempre aceite resposta com as próprias palavras e "não sei". Quem está começando não sabe o que não sabe; opções concretas e blocos curtos ajudam. O essencial:
 
-1. Objetivo: árvore e história da família, cidadania, ou os dois.
-2. De quem vem a origem estrangeira, até onde a pessoa sabe (país, cidade, nome, ano aproximado de chegada) e quantas gerações separam esse antepassado de quem vai pedir.
-3. Que documentos a família já tem em mãos ou fotografados.
-4. Orçamento: só caminhos gratuitos por enquanto, ou pode gastar com certidões (e até quanto).
-5. Onde guardar a pasta do projeto no computador.
-
-Depois, crie o projeto com a skill `arvore-documental`, cadastre o que a pessoa contou como `relato` e mostre o primeiro esboço da árvore no navegador. Ver a árvore nascer motiva a pessoa a buscar os documentos.
+1. Objetivo (árvore, cidadania ou os dois), país de origem, quem é o antepassado estrangeiro e onde guardar a pasta. Crie o projeto com a skill `arvore-documental` logo aqui.
+2. Os dados de cada pessoa, geração por geração: a própria pessoa (nome completo, sexo, data e local de nascimento), os pais, os quatro avós e, se ela souber, os bisavós (nome completo, nome de solteira, data e local de nascimento, se está vivo ou o ano do falecimento, casamento). Grave tudo como `relato` à medida que chega e mostre a árvore no navegador depois dos avós. Ver a árvore nascer motiva a pessoa a buscar os documentos.
+3. Que documentos a família já tem, quem pode ajudar, se alguém já pediu a cidadania ou se naturalizou brasileiro.
+4. Orçamento (só caminhos gratuitos por enquanto, ou pode gastar com certidões, e até quanto) e as preferências de saída.
 
 ## Arquivo de regras do projeto
 

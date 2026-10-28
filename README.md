@@ -72,7 +72,7 @@ Dentro do Claude Code:
 1. Crie uma pasta vazia para a família (por exemplo `Documentos/Familia-Silva`).
 2. Abra essa pasta no Claude Code, Codex ou Antigravity.
 3. Diga algo como: *"Quero montar a árvore da minha família e ver se tenho direito à cidadania portuguesa. Meu bisavô veio do Porto."*
-4. Responda às perguntas de múltipla escolha. O agente cria a estrutura, cadastra o que você contou e mostra a primeira versão da árvore.
+4. Responda às perguntas. Primeiro vêm algumas escolhas rápidas (objetivo, país, pasta); depois o agente pede, uma geração por vez, os dados que você souber: seu nome, data e local de nascimento, e os dos seus pais, avós e, se souber, bisavós. Ele grava tudo no seu computador e mostra a árvore se formando.
 5. Vá entregando os documentos (fotos ou PDFs) conforme encontrar. Cada um é transcrito, cadastrado e conferido com os outros.
 
 Quer ver antes de começar? Rode o exemplo fictício:
