@@ -1,0 +1,10 @@
+{
+  "name": "raizes-e-cidadania",
+  "version": "1.0.0",
+  "description": "Árvore genealógica com prova documental e apoio à cidadania portuguesa, italiana e espanhola por descendência.",
+  "author": { "name": "walbercarvalho" },
+  "homepage": "https://github.com/walbercarvalho/raizes-e-cidadania",
+  "repository": "https://github.com/walbercarvalho/raizes-e-cidadania",
+  "license": "MIT",
+  "keywords": ["genealogia", "arvore-genealogica", "cidadania", "portugal", "italia", "espanha"]
+}

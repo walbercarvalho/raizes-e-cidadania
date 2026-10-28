@@ -1,0 +1,11 @@
+{
+  "name": "raizes-e-cidadania",
+  "owner": { "name": "walbercarvalho" },
+  "plugins": [
+    {
+      "name": "raizes-e-cidadania",
+      "source": "./",
+      "description": "Árvore genealógica com prova documental e apoio à cidadania portuguesa, italiana e espanhola por descendência."
+    }
+  ]
+}
