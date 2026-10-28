@@ -56,7 +56,7 @@ Divergências comuns e como tratar:
 
 ## Montagem do pedido
 
-1. Escolha o impresso no site do IRN (Modelo 1C para filho, 1D para neto; confira se há versão nova depois do Regulamento de 2026).
+1. Escolha o impresso na página Impressos e modelos do IRN (Modelo 1C para filho, 1D para neto) e baixe por lá, nunca por um link antigo salvo: os endereços antigos ainda abrem PDFs desatualizados. Em 27/10/2026, o 1D já estava na versão 05/2026, com os documentos novos exigidos do neto, e o 1C maior ainda era de 2023.
 2. Preencha como rascunho com a pessoa. A assinatura precisa de reconhecimento presencial (consulado, notário ou equivalente aceito); diga isso antes.
 3. Taxa: 175 euros para maior em outubro de 2026, gratuito para menor; pagamento pela plataforma do IRN. Confira o valor no dia.
 4. Envio: presencialmente nos balcões listados na referência, pelo consulado quando ele aceitar o tipo de pedido, ou por correio registado à Conservatória dos Registos Centrais. Pedido online só por advogado ou solicitador inscrito em Portugal.

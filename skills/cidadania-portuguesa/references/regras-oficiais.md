@@ -126,9 +126,12 @@ Fonte: versão consolidada no DR, https://diariodarepublica.pt/dr/legislacao-con
   - https://irn.justica.gov.pt/Portals/33/Impressos/Nacionalidade/Modelo%201C%20-%20maior%20de%2018%20anos.pdf?ver=2019-06-06-151615-410 (conferido em 27/10/2026)
   - Quadro 3 (documentos): certidão de nascimento do interessado; certidão de nascimento da mãe ou do pai português; fotocópia certificada do passaporte, título de residência ou documento equivalente (para maiores de 14 anos); procuração, se houver.
 - **Neto** (art. 1.º, n.º 1, d)): **Modelo 1D – maior de 18 anos**, "Netos de avó portuguesa ou de avô português nascidos no estrangeiro que declarem que querem ser portugueses (art. 1º, nº 1, al. d)...)".
-  - https://irn.justica.gov.pt/Portals/33/Impressos/Nacionalidade/Modelo%201D%20-%20maior%20de%2018%20anos.pdf?ver=2019-06-06-151616-333 (conferido em 27/10/2026)
-  - Quadro 3: certidões de nascimento do interessado, do avô ou avó e do progenitor; registos criminais estrangeiros; prova de língua; procuração.
-  - A certidão do progenitor é obrigatória se ele nasceu no estrangeiro. O texto do quadro de declarações **ainda reproduz o regime antigo** (ligação pela língua e condenação a 3 anos ou mais). **[LEITURA]** Pode haver nova versão do impresso depois do novo Regulamento.
+  - Versão 05/2026, já adaptada à LO 1/2026: https://irn.justica.gov.pt/Portals/33/Impressos/Nacionalidade/2026/Modelo_1D_maior_052026.pdf (conferido em 27/10/2026). Há também o Modelo 1D para menor, na mesma pasta `/2026/` (`Modelo_1D_menor_052026.pdf`).
+  - Quadro 2 (declarações): o texto já segue a lei nova (sem condenação a pena de prisão efetiva superior a 3 anos pelos crimes listados, sem ameaça à segurança, sem medidas restritivas da ONU ou da UE pela Lei 97/2017).
+  - Quadro 3 (documentos): 1, certidão de nascimento do interessado; 2, do avô ou avó português; 3, do progenitor; 4, registos criminais estrangeiros; 5, "Documento comprovativo do conhecimento suficiente da língua e da cultura portuguesas, da história e dos símbolos nacionais"; 6, comprovativo do conhecimento dos direitos e deveres fundamentais e da organização política do Estado; 7, "Declaração solene relativa à adesão aos princípios fundamentais do Estado de Direito Democrático"; procuração, se houver.
+  - A certidão do progenitor é obrigatória se ele nasceu no estrangeiro.
+  - **Atenção aos links antigos.** O endereço antigo do 1D (`.../Nacionalidade/Modelo%201D%20-%20maior%20de%2018%20anos.pdf`) ainda abre, em 27/10/2026, o PDF anterior à LO 1/2026, só com prova de língua. Pegue sempre o link na página https://irn.justica.gov.pt/Impressos-e-modelos.
+  - Na mesma página, em 27/10/2026, o Modelo 1C maior continua na versão de dez/2023, e os Modelos 6.1, 6.2, 6.3, 6.6, 6.8 e 6.9 (naturalização) já têm versão 05/2026.
   - Pelo metadado do PDF, o Modelo 1C foi alterado em dez/2023. A data da URL ("ver=2019") é só a versão do link.
 
 ### 3.2 Taxas (emolumentos). [CONFIRMADO]
@@ -238,7 +241,7 @@ Fontes: https://justica.gov.pt/Nasceu-no-estrangeiro-e-e-filho-de-um-portugues, 
 1. Publicação do novo Regulamento da Nacionalidade (prazo de 90 dias vencido por volta de 16/08/2026). Não achei no DR.
 2. Como se provam, na prática, cultura, história, símbolos e direitos e deveres para netos (formato do teste ou certificado, isenções).
 3. Se a presunção de língua do art. 6.º, n.º 10, se aplica de forma expressa aos netos. É leitura minha; a prática do IRN não foi confirmada.
-4. Versão nova dos Modelos 1C e 1D adaptada à LO 1/2026. Os PDFs atuais ainda trazem o texto antigo.
+4. Como o IRN aceita, na prática, os documentos 5 e 6 do Quadro 3 do novo Modelo 1D (qual teste ou certificado). O impresso foi atualizado em 05/2026; o Regulamento, não.
 5. Número dos artigos do RERN (18.º e 10.º). Os valores e textos foram confirmados; o número do artigo foi deduzido.
 6. Valor da transcrição de casamento no consulado.
 7. Base legal expressa da exigência de transcrição prévia do casamento dos pais. Só a confirmei em páginas consulares e do MNE.
@@ -258,7 +261,8 @@ Fontes: https://justica.gov.pt/Nasceu-no-estrangeiro-e-e-filho-de-um-portugues, 
 - Notícia de 19/05/2026: https://justica.gov.pt/Noticias/Lei-da-Nacionalidade-novas-regras-entram-em-vigor-a-19-de-maio
 - Notícia do IRN de 2020 (LO 2/2020): https://irn.justica.gov.pt/Noticias-do-IRN/Publicada-alteracao-a-Lei-da-Nacionalidade-portuguesa
 - Modelo 1C (maior): https://irn.justica.gov.pt/Portals/33/Impressos/Nacionalidade/Modelo%201C%20-%20maior%20de%2018%20anos.pdf
-- Modelo 1D (maior): https://irn.justica.gov.pt/Portals/33/Impressos/Nacionalidade/Modelo%201D%20-%20maior%20de%2018%20anos.pdf
+- Modelo 1D (maior), versão 05/2026: https://irn.justica.gov.pt/Portals/33/Impressos/Nacionalidade/2026/Modelo_1D_maior_052026.pdf
+- Página de impressos do IRN: https://irn.justica.gov.pt/Impressos-e-modelos
 - IRN, documentos estrangeiros: https://irn.justica.gov.pt/Traducao-de-documentos/Documentos-estrangeiros
 - Portal das Comunidades, nascimento: https://portaldascomunidades.mne.gov.pt/pt/atendimento/no-estrangeiro/servicos-consulares/registo-civil/nascimento
 - Portal das Comunidades, casamento: https://portaldascomunidades.mne.gov.pt/pt/atendimento/no-estrangeiro/servicos-consulares/registo-civil/casamento
