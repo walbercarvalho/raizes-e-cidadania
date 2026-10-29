@@ -18,9 +18,12 @@ Endereços conferidos em outubro de 2026. Sites mudam: se um link não abrir, pr
 | FamilySearch | familysearch.org | Índices e imagens de registros paroquiais e civis do Brasil, Portugal, Itália, Espanha e muitos outros; catálogo de microfilmes digitalizados (procure em Pesquisa > Catálogo pelo lugar) | Gratuito, com conta |
 | Centros de História da Família | familysearch.org/centers | Acesso às imagens com restrição | Gratuito |
 | Find a Grave | findagrave.com | Sepulturas fotografadas por voluntários | Gratuito |
-| MyHeritage, Ancestry, Geneanet | | Árvores de outros usuários e algumas coleções exclusivas | Em geral pago |
+| MyHeritage | myheritage.com.br/research | Busca em coleções de registros (civis, paroquiais, imigração, censos de vários países), jornais e árvores de usuários; tem coleções que o FamilySearch não mostra ou restringe | A busca mostra parte do índice de graça; ver o registro inteiro costuma exigir assinatura. Se a pessoa tiver assinatura, é a melhor opção ao lado do FamilySearch |
+| Ancestry, Geneanet | ancestry.com, geneanet.org | Árvores de outros usuários e algumas coleções exclusivas | Em geral pago |
 
 Árvores prontas de outros usuários (inclusive a árvore colaborativa do FamilySearch) são pistas, não provas. Muitas têm vínculos errados; confira cada dado no documento.
+
+MyHeritage e outros sites pagos costumam abrir uma verificação anti-robô (CAPTCHA). O agente não resolve CAPTCHA nem faz login: a pessoa passa a verificação e entra na conta dela, e o agente lê as páginas que ela abrir. As correspondências automáticas desses sites ("Smart Matches", "dicas") são pistas como as árvores; o que vale é o registro com imagem do original, citado pela coleção e pelo identificador. Não grave em arquivos nem em commits os parâmetros de sessão que aparecem nos links da conta da pessoa.
 
 ## 2. Brasil
 
